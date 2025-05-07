@@ -5,13 +5,16 @@ import trevoj from '../../assets/img/trevoj.png'
 import positiv from '../../assets/img/positiv.png'
 import {specialists} from "../../shared/specialists.js";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import Loader from './Loader';
 
 export const Home = () => {
     const navigate = useNavigate();
     const consultationRef = useRef(null);
     const expertsRef = useRef(null);
     const location = useLocation();
+    const [loading, setLoading] = useState(true);
+    const [logoVisible, setLogoVisible] = useState(true);
 
     const lessons = [
         {
@@ -43,6 +46,21 @@ export const Home = () => {
         }
     }, [location]);
 
+    useEffect(() => {
+        const timer = setTimeout(() => setLoading(false), 6000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        if (!loading) return;
+        const interval = setInterval(() => {
+            setLogoVisible(v => !v);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, [loading]);
+
+    if (loading) return <Loader logoVisible={logoVisible} />;
+
     return (
         <>
             <section id="hero" className="hero-section">
@@ -57,9 +75,18 @@ export const Home = () => {
                 </div>
 
                 <div className="wave-container">
-                    <div className="wave"></div>
-                    <div className="wave"></div>
-                    <div className="wave"></div>
+                    <svg className="wave-svg wave1" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
+                    </svg>
+                    <svg className="wave-svg wave2" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
+                    </svg>
+
+                    <svg className="wave-svg wave3" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
+                    </svg>
+
+                  
                 </div>
             </section>
 

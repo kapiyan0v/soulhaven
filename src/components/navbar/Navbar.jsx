@@ -1,6 +1,7 @@
 import './style.css'
 import {Link, useNavigate} from "react-router-dom";
 import { useUser } from '../../context/UserContext';
+import logo from '../../assets/img/soulhaven.png';
 
 export const Navbar = () => {
     const navigate = useNavigate();
@@ -14,9 +15,7 @@ export const Navbar = () => {
     return (
         <div className="container header-content">
             <div className="logo">
-                <p>
-                    soulhaven
-                </p>
+                <img src={logo} alt="soulhaven" />
             </div>
             <nav>
                 <ul className="nav-menu">
