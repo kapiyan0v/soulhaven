@@ -4,10 +4,14 @@ import joga from '../../assets/img/joga.png'
 import trevoj from '../../assets/img/trevoj.png'
 import positiv from '../../assets/img/positiv.png'
 import {specialists} from "../../shared/specialists.js";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useRef, useEffect } from 'react';
 
 export const Home = () => {
     const navigate = useNavigate();
+    const consultationRef = useRef(null);
+    const expertsRef = useRef(null);
+    const location = useLocation();
 
     const lessons = [
         {
@@ -27,6 +31,18 @@ export const Home = () => {
         },
     ];
 
+    const handleConsultationScroll = () => {
+        if (consultationRef.current) {
+            consultationRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        if (location.state?.scrollToExperts && expertsRef.current) {
+            expertsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location]);
+
     return (
         <>
             <section id="hero" className="hero-section">
@@ -37,7 +53,7 @@ export const Home = () => {
                     <h2 className="hero-subtitle">остров спокойствия в мире хаоса</h2>
                     <p className="hero-description">Здесь вы найдете инструменты для борьбы<br/>с тревожностью,
                         расслабления и самопознания</p>
-                    <button className="cta-button">Получить консультацию</button>
+                    <button className="cta-button" onClick={handleConsultationScroll}>Получить консультацию</button>
                 </div>
 
                 <div className="wave-container">
@@ -305,7 +321,7 @@ export const Home = () => {
 
                 </div>
             </section>
-            <section className='specialists'>
+            <section className='specialists' ref={expertsRef}>
                 <h1 className="section-title">Наши эксперты</h1>
 
                 <div className='specialists-cards'>
@@ -337,7 +353,7 @@ export const Home = () => {
                 </div>
             </section>
 
-            <section className="consultation">
+            <section className="consultation" ref={consultationRef}>
                 <div className="consultation-inner">
                     <h3>Записаться на консультацию</h3>
                     <p>Оставьте свои контакты для связи, с Вами свяжутся в скором времени.</p>

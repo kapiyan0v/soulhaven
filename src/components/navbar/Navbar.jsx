@@ -1,8 +1,15 @@
 import './style.css'
 import {Link, useNavigate} from "react-router-dom";
+import { useUser } from '../../context/UserContext';
 
 export const Navbar = () => {
     const navigate = useNavigate();
+    const { user, logout } = useUser();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
 
     return (
         <div className="container header-content">
@@ -22,9 +29,9 @@ export const Navbar = () => {
                     <Link to='/courses'>
                         Курсы
                     </Link>
-                    <Link to='/consultations'>
+                    <a href="#" onClick={e => { e.preventDefault(); navigate('/', { state: { scrollToExperts: true } }); }}>
                         Консультации
-                    </Link>
+                    </a>
                     <Link to='/challenges'>
                         Челленджи
                     </Link>
@@ -33,7 +40,13 @@ export const Navbar = () => {
                     </Link>
                 </ul>
             </nav>
-            <button className="login-btn" onClick={() => navigate('/login')}>Вход/Регистрация</button>
+            {user ? (
+                <button className="logout-btn" onClick={handleLogout}>
+                    Выйти
+                </button>
+            ) : (
+                <button className="login-btn" onClick={() => navigate('/login')}>Вход/Регистрация</button>
+            )}
         </div>
     )
 }

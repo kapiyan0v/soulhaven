@@ -1,8 +1,11 @@
 import './style.css'
 import health from '../../assets/img/health.png'
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 export const CourseStartPage = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const courseName = location.state?.courseName || 'Осознанное дыхание';
     return (
         <>
             <main className="container landing-section">
@@ -10,7 +13,7 @@ export const CourseStartPage = () => {
                     <img src={health} alt="Медитация"/>
                 </div>
                 <div className="landing-content">
-                    <h1>Добро пожаловать в курс «Осознанное дыхание»!</h1>
+                    <h1>Добро пожаловать в курс «{courseName}»!</h1>
                     <p className="description">Этот курс поможет вам лучше управлять стрессом, тревожностью и своим
                         состоянием через дыхательные практики</p>
                 </div>
@@ -20,9 +23,12 @@ export const CourseStartPage = () => {
                 <p className="readiness-text">Готовы начать? Нажмите кнопку ниже, чтобы приступить к курсу и изменить
                     свою жизнь к лучшему!</p>
                 <div className="start-container">
-                    <Link to='/course-breathe'>
+                    <button
+                        className="start-btn"
+                        onClick={() => navigate('/course-breathe', { state: { courseName } })}
+                    >
                         Приступить к курсу
-                    </Link>
+                    </button>
                 </div>
                 <Link to='/courses'>
                     <i className="fas fa-arrow-left"></i>Вернуться к курсам

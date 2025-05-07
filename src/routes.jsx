@@ -15,6 +15,12 @@ import { PositiveThinking } from './pages/mini-games/PositiveThinking';
 import { BreathingFirefly } from './pages/mini-games/BreathingFirefly';
 import Challenges from './pages/challenges/Challenges';
 import ChallengeBreath from './pages/challenges/ChallengeBreath';
+import ProfileLayout from './pages/profile/ProfileLayout';
+import ProfileMain from './pages/profile/ProfileMain';
+import ProfileCalendar from './pages/profile/ProfileCalendar';
+import ProfileAchievements from './pages/profile/ProfileAchievements';
+import ProfilePrivacy from './pages/profile/ProfilePrivacy';
+import ProfileSettings from './pages/profile/ProfileSettings';
 import './styles/in-development.css';
 
 const InDevelopmentPage = ({ title }) => (
@@ -22,6 +28,11 @@ const InDevelopmentPage = ({ title }) => (
         {title} (в разработке)
     </div>
 );
+
+const Achievements = () => <div style={{padding: 32}}>Достижения (в разработке)</div>;
+const Calendar = () => <div style={{padding: 32}}>Календарь (в разработке)</div>;
+const Privacy = () => <div style={{padding: 32}}>Конфиденциальность (в разработке)</div>;
+const Settings = () => <div style={{padding: 32}}>Настройки (в разработке)</div>;
 
 const router = createBrowserRouter([
     {
@@ -55,7 +66,14 @@ const router = createBrowserRouter([
             },
             { 
                 path: 'profile', 
-                element: <InDevelopmentPage title="Профиль" />
+                element: <ProfileLayout />,
+                children: [
+                    { index: true, element: <ProfileMain /> },
+                    { path: 'achievements', element: <ProfileAchievements /> },
+                    { path: 'calendar', element: <ProfileCalendar /> },
+                    { path: 'privacy', element: <ProfilePrivacy /> },
+                    { path: 'settings', element: <ProfileSettings /> },
+                ]
             }
         ],
     },

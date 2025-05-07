@@ -613,7 +613,10 @@
 .consultation {
     background-image: url("../../assets/img/consult-bg.png");
     height: 600px;
-    padding: 200px 100px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .consultation-inner {
@@ -621,6 +624,9 @@
     border-radius: 30px;
     padding: 50px 100px;
     width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .consultation-inner h3 {
@@ -647,6 +653,12 @@
     font-size: 20px;
     border-radius: 12px;
     padding: 26px 72px;
+    text-align: center;
+}
+
+.consultation-forms input::placeholder {
+    color: #fff;
+    opacity: 0.7;
 }
 
 .consultation-forms input:first-child {

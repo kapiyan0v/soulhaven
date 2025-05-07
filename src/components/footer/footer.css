@@ -1,0 +1,131 @@
+.footer {
+  background: #fcfaf5;
+  position: relative;
+  padding-top: 48px;
+  padding-bottom: 0;
+  font-family: 'Inter', sans-serif;
+  color: #339CCC;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 0 32px 0 32px;
+}
+
+.footer-col {
+  flex: 1 1 0;
+  min-width: 180px;
+  margin-bottom: 32px;
+}
+
+.footer-col h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #339CCC;
+}
+
+.footer-col.about p {
+  color: #339CCC;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footer-col.nav ul,
+.footer-col.contacts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col.nav li,
+.footer-col.contacts li {
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.footer-col.nav a {
+  color: #339CCC;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col.nav a:hover {
+  color: #2196f3;
+}
+
+.footer-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+.footer-col.logo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 180px;
+}
+.footer-logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #339CCC;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-wave {
+  width: 100%;
+  overflow-x: hidden;
+}
+.footer-wave svg {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0 12px 0 12px;
+  }
+  .footer-col {
+    min-width: 140px;
+    margin-bottom: 18px;
+  }
+  .footer-col.logo {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0 4vw 0 4vw;
+  }
+  .footer-col {
+    min-width: 0;
+    margin-bottom: 12px;
+  }
+  .footer-col.logo {
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 0;
+    margin-top: 12px;
+  }
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+  .footer-wave svg {
+    height: 60px;
+  }
+} 

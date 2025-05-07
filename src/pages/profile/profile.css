@@ -1,0 +1,523 @@
+.profile-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  background: #f7fbfd;
+}
+
+.profile-sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 0 0;
+  min-height: 100vh;
+}
+.profile-sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.profile-avatar img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.profile-username {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #339CCC;
+}
+.profile-nav {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.profile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.profile-nav li {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.profile-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #339CCC;
+  text-decoration: none;
+  font-size: 1.08rem;
+  padding: 12px 32px;
+  border-radius: 8px 0 0 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.profile-nav li.active a, .profile-nav a:hover {
+  background: #e6f4fa;
+  color: #2563eb;
+}
+.profile-nav-icon {
+  font-size: 1.3em;
+}
+.profile-chatbot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 32px;
+}
+.profile-chatbot img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 8px;
+}
+.chat-btn {
+  background: #339CCC;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.chat-btn:hover {
+  background: #2563eb;
+}
+.chat-support {
+  color: #339CCC;
+  font-size: 0.95rem;
+}
+
+.profile-main {
+  flex: 1;
+  padding: 40px 32px;
+  background: #f7fbfd;
+  min-height: 100vh;
+}
+.profile-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.profile-main-top {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+}
+.profile-greeting {
+  background: #339CCC;
+  color: #fff;
+  border-radius: 24px;
+  padding: 32px 32px 32px 40px;
+  display: flex;
+  align-items: center;
+  flex: 2;
+  min-width: 0;
+}
+.greeting-text h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.greeting-text p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.greeting-illustration img {
+  width: 120px;
+  height: 120px;
+  margin-left: 32px;
+}
+.profile-calendar-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.08);
+  padding: 24px 32px;
+  min-width: 320px;
+  max-width: 340px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calendar-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #339CCC;
+  margin-bottom: 12px;
+}
+.calendar-grid {
+  width: 100%;
+}
+.calendar-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.calendar-days span {
+  color: #339CCC;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.calendar-row span {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #213547;
+}
+.calendar-active {
+  background: #339CCC;
+  color: #fff !important;
+}
+.profile-progress-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+.profile-progress-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.08);
+  padding: 24px 24px 18px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  position: relative;
+}
+.profile-progress-card.done {
+  border: 2px solid #339CCC;
+}
+.progress-title {
+  color: #339CCC;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.progress-desc {
+  color: #888;
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+}
+.progress-value {
+  color: #339CCC;
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+.profile-bottom-row {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+.profile-tip-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.08);
+  padding: 24px 24px 18px 24px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+}
+.tip-title {
+  color: #339CCC;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.tip-content {
+  color: #213547;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.tip-img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+}
+.profile-user-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.08);
+  padding: 24px 18px;
+  min-width: 220px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.user-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.user-level-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: #339CCC;
+  font-weight: 600;
+}
+.user-level-bar {
+  flex: 1;
+  height: 8px;
+  background: #e6f4fa;
+  border-radius: 4px;
+  margin: 0 4px;
+  overflow: hidden;
+}
+.user-level-bar-fill {
+  height: 100%;
+  background: #339CCC;
+  border-radius: 4px;
+}
+.user-level-xp {
+  font-size: 0.95rem;
+  color: #339CCC;
+}
+.user-level-star {
+  color: #FFD700;
+  font-size: 1.1rem;
+}
+.user-info-row {
+  color: #213547;
+  font-size: 0.98rem;
+  text-align: center;
+}
+.user-nick {
+  color: #339CCC;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.profile-history-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.08);
+  padding: 24px 18px;
+  min-width: 180px;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: center;
+}
+.history-title {
+  color: #339CCC;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.history-desc {
+  color: #213547;
+  font-size: 0.98rem;
+}
+.history-icon {
+  font-size: 2rem;
+  color: #339CCC;
+  margin-top: 8px;
+}
+
+@media (max-width: 1100px) {
+  .profile-main-top, .profile-progress-row, .profile-bottom-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .profile-calendar-card, .profile-greeting, .profile-progress-card, .profile-tip-card, .profile-user-card, .profile-history-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .profile-layout {
+    flex-direction: column;
+  }
+  .profile-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+    min-height: 0;
+    padding: 0;
+  }
+  .profile-sidebar-header, .profile-chatbot {
+    display: none;
+  }
+  .profile-nav {
+    width: 100%;
+    margin: 0;
+  }
+  .profile-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .profile-nav li {
+    margin-bottom: 0;
+  }
+  .profile-main {
+    padding: 16px 4px;
+  }
+}
+
+.calendar-page-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 40px 0;
+}
+.calendar-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(51,156,204,0.08);
+  padding: 32px 40px;
+  min-width: 420px;
+  max-width: 480px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calendar-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+.calendar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+.calendar-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #339CCC;
+  cursor: pointer;
+  padding: 0 8px;
+  opacity: 0.5;
+}
+.calendar-table {
+  width: 100%;
+}
+.calendar-table-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.calendar-table-days span {
+  color: #888;
+  font-weight: 600;
+  font-size: 1.1rem;
+  width: 44px;
+  text-align: center;
+}
+.calendar-cell {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #222;
+  position: relative;
+  background: none;
+  transition: background 0.2s, color 0.2s;
+}
+.calendar-today {
+  background: #339CCC;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(51,156,204,0.10);
+}
+.calendar-active-dot {
+  position: relative;
+}
+.calendar-dot {
+  position: absolute;
+  left: 50%;
+  bottom: 7px;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #339CCC;
+  border-radius: 50%;
+  z-index: 2;
+}
+.calendar-summary-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(51,156,204,0.08);
+  padding: 32px 32px 32px 32px;
+  min-width: 280px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.calendar-summary-row {
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+.calendar-motivation-btn {
+  background: #339CCC;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 32px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.calendar-motivation-btn:hover {
+  background: #2563eb;
+}
+@media (max-width: 900px) {
+  .calendar-page-layout {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+    padding: 24px 0;
+  }
+  .calendar-card, .calendar-summary-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 24px 8px;
+  }
+}
+.calendar-missed {
+  color: #FFD600 !important;
+  text-decoration: line-through;
+  opacity: 0.7;
+} 

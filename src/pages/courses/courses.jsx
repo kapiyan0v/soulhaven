@@ -26,7 +26,7 @@ export const Courses = () => {
                             </div>
                             <button
                                 className="details-btn"
-                                onClick={() => { navigate('/course-start'); }}
+                                onClick={() => { navigate('/course-start', { state: { courseName: 'Осознанное дыхание' } }); }}
                             >
                                 Подробнее
                             </button>
@@ -40,7 +40,7 @@ export const Courses = () => {
                                 <h2 className="course-title">Йога для гармонии</h2>
                                 <p className="course-description">Поддержание баланса и расслабления</p>
                             </div>
-                            <button className="details-btn">Подробнее</button>
+                            <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Йога для гармонии' } }); }}>Подробнее</button>
                         </div>
                     </div>
 
@@ -51,7 +51,7 @@ export const Courses = () => {
                                 <h2 className="course-title">Управление тревожностью</h2>
                                 <p className="course-description">Стратегия снижения стресса</p>
                             </div>
-                            <button className="details-btn">Подробнее</button>
+                            <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Управление тревожностью' } }); }}>Подробнее</button>
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@ export const Courses = () => {
                                 <h2 className="course-title">Путь к позитиву</h2>
                                 <p className="course-description">Укрепление уверенности и радости в жизни</p>
                             </div>
-                            <button className="details-btn">Подробнее</button>
+                            <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Путь к позитиву' } }); }}>Подробнее</button>
                         </div>
                     </div>
                 </div>
