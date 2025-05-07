@@ -4,8 +4,10 @@ import joga from '../../assets/img/joga.png'
 import trevoj from '../../assets/img/trevoj.png'
 import positiv from '../../assets/img/positiv.png'
 import {specialists} from "../../shared/specialists.js";
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+    const navigate = useNavigate();
 
     const lessons = [
         {
@@ -20,8 +22,8 @@ export const Home = () => {
         },
         {
             stars: "+50 звезд",
-            title: "сыграть в мини-игру ‘Собери нас’",
-            description: "Сыграйте в мини-игру ‘Собери нас’ для развития внимания, расслабления и улучшения настроения",
+            title: "сыграть в мини-игру 'Собери нас'",
+            description: "Сыграйте в мини-игру 'Собери нас' для развития внимания, расслабления и улучшения настроения",
         },
     ];
 
@@ -57,8 +59,8 @@ export const Home = () => {
                         </div>
                         <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="9" stroke="#5398c5" strokeWidth="2"/>
-                            <path d="M12 7V12L15 15" stroke="#5398c5" strokeWidth="2" strokeLinecap="round"/>
+                            <circle cx="12" cy="12" r="9" stroke="#5398c5" stroke-width="2"/>
+                            <path d="M12 7V12L15 15" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
 
@@ -69,7 +71,7 @@ export const Home = () => {
                         <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2L15 8L21 9L17 14L18 20L12 17.5L6 20L7 14L3 9L9 8L12 2Z" stroke="#5398c5"
-                                  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
 
@@ -79,8 +81,8 @@ export const Home = () => {
                         </div>
                         <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#5398c5" strokeWidth="2"
-                                  strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#5398c5" stroke-width="2"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
 
@@ -92,9 +94,9 @@ export const Home = () => {
                              xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
-                                stroke="#5398c5" strokeWidth="2"/>
+                                stroke="#5398c5" stroke-width="2"/>
                             <path d="M16 21V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V21" stroke="#5398c5"
-                                  strokeWidth="2"/>
+                                  stroke-width="2"/>
                         </svg>
                     </div>
 
@@ -104,9 +106,9 @@ export const Home = () => {
                         </div>
                         <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 5H21" stroke="#5398c5" strokeWidth="2" strokeLinecap="round"/>
-                            <path d="M3 12H21" stroke="#5398c5" strokeWidth="2" strokeLinecap="round"/>
-                            <path d="M3 19H21" stroke="#5398c5" strokeWidth="2" strokeLinecap="round"/>
+                            <path d="M3 5H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M3 12H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M3 19H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
                 </div>
@@ -134,7 +136,7 @@ export const Home = () => {
                                     Расслабляющая игра, в которой вы собираете пазлы с живописными природными видами.
                                     Завершая изображение, вы погружаетесь в атмосферу умиротворения и покоя.
                                 </p>
-                                <a href="#" className="start-button">Начать игру</a>
+                                <button onClick={() => navigate('/mini-games/puzzle')} className="start-button">Начать игру</button>
                             </div>
                         </div>
                     </div>
@@ -155,7 +157,7 @@ export const Home = () => {
                                     Творческая медитация, где вы выбираете цвета и раскрашиваете мандалу, подстраивая
                                     сложность под свое настроение. Идеальный способ снять напряжение и выразить себя.
                                 </p>
-                                <a href="#" className="start-button">Начать игру</a>
+                                <button onClick={() => navigate('/mini-games/mandala-coloring')} className="start-button">Начать игру</button>
                             </div>
                         </div>
                     </div>
@@ -176,7 +178,7 @@ export const Home = () => {
                                     Антистресс-игра, в которой вы лопаете пузыри в ритме дыхания. Это помогает
                                     замедлиться, расслабиться и улучшить концентрацию.
                                 </p>
-                                <a href="#" className="start-button">Начать игру</a>
+                                <button onClick={() => navigate('/mini-games/breathing-bubbles')} className="start-button">Начать игру</button>
                             </div>
                         </div>
                     </div>
@@ -197,7 +199,7 @@ export const Home = () => {
                                     Игра для осознанного дыхания. Следите за мягким свечением светлячка и дышите в такт
                                     его движению, чтобы вернуть себе ощущение спокойствия.
                                 </p>
-                                <a href="#" className="start-button">Начать игру</a>
+                                <button onClick={() => navigate('/mini-games/breathing-firefly')} className="start-button">Начать игру</button>
                             </div>
                         </div>
                     </div>
@@ -218,7 +220,7 @@ export const Home = () => {
                                     Тренировка позитивного мышления. Из предложенных слов составьте вдохновляющие фразы,
                                     которые помогут вам настроиться на гармонию и уверенность.
                                 </p>
-                                <a href="#" className="start-button">Начать игру</a>
+                                <button onClick={() => navigate('/mini-games/positive-thinking')} className="start-button">Начать игру</button>
                             </div>
                         </div>
                     </div>

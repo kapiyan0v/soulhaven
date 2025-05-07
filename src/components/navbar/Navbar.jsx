@@ -16,19 +16,19 @@ export const Navbar = () => {
                     <Link to='/'>
                         Главная
                     </Link>
-                    <Link to='/'>
+                    <Link to='/mini-games'>
                         Мини-игры
                     </Link>
                     <Link to='/courses'>
                         Курсы
                     </Link>
-                    <Link to='/'>
+                    <Link to='/consultations'>
                         Консультации
                     </Link>
-                    <Link to='/'>
+                    <Link to='/challenges'>
                         Челленджи
                     </Link>
-                    <Link to='/'>
+                    <Link to='/profile'>
                         Профиль
                     </Link>
                 </ul>

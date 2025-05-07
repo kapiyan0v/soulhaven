@@ -6,6 +6,22 @@ import {CourseStartPage} from "./pages/course-start/course-start.jsx";
 import {CourseBreathe} from "./pages/course-breathe/course-breathe.jsx";
 import {LoginPage} from "./pages/login/login.jsx";
 import {Registration} from "./pages/registration/registration.jsx";
+import {MiniGames} from "./pages/mini-games/mini-games.jsx";
+import {PuzzleGame} from "./pages/mini-games/PuzzleGame.jsx";
+import {SnakeGame} from "./pages/mini-games/SnakeGame.jsx";
+import { BreathingBubbles } from './pages/mini-games/BreathingBubbles';
+import { MandalaColoring } from './pages/mini-games/MandalaColoring';
+import { PositiveThinking } from './pages/mini-games/PositiveThinking';
+import { BreathingFirefly } from './pages/mini-games/BreathingFirefly';
+import Challenges from './pages/challenges/Challenges';
+import ChallengeBreath from './pages/challenges/ChallengeBreath';
+import './styles/in-development.css';
+
+const InDevelopmentPage = ({ title }) => (
+    <div className="in-development">
+        {title} (в разработке)
+    </div>
+);
 
 const router = createBrowserRouter([
     {
@@ -14,13 +30,35 @@ const router = createBrowserRouter([
         children: [
             { index: true, element: <Home /> },
             { path: 'courses', element: <Courses /> },
-            { path: '/course-start', element: <CourseStartPage /> },
-            { path: '/course-breathe', element: <CourseBreathe /> },
+            { path: 'course-start', element: <CourseStartPage /> },
+            { path: 'course-breathe', element: <CourseBreathe /> },
             { path: 'login', element: <LoginPage /> },
-            { path: 'register', element: <Registration /> }
+            { path: 'register', element: <Registration /> },
+            { path: 'mini-games', element: <MiniGames /> },
+            { path: 'mini-games/puzzle', element: <PuzzleGame /> },
+            { path: 'mini-games/snake', element: <SnakeGame /> },
+            { path: 'mini-games/breathing-bubbles', element: <BreathingBubbles /> },
+            { path: 'mini-games/mandala-coloring', element: <MandalaColoring /> },
+            { path: 'mini-games/positive-thinking', element: <PositiveThinking /> },
+            { path: 'mini-games/breathing-firefly', element: <BreathingFirefly /> },
+            { 
+                path: 'consultations', 
+                element: <InDevelopmentPage title="Консультации" />
+            },
+            { 
+                path: 'challenges', 
+                element: <Challenges />
+            },
+            { 
+                path: 'challenges/3-breath',
+                element: <ChallengeBreath />
+            },
+            { 
+                path: 'profile', 
+                element: <InDevelopmentPage title="Профиль" />
+            }
         ],
     },
-
 ]);
 
 export default router;

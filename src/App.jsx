@@ -1,16 +1,16 @@
-import './App.css'
-import {Navbar} from "./components/navbar/Navbar.jsx";
-import {Outlet} from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import { Navbar } from "./components/navbar/Navbar.jsx";
+import './index.css';
 
 function App() {
     return (
-        <div>
+        <div className="app-wrapper">
             <Navbar />
-            <main>
+            <main className="main-content">
                 <Outlet />
             </main>
         </div>
     );
 }
 
-export default App
+export default App;
