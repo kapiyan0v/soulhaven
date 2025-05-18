@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../styles/mini-games.css';
+import snake from '../../assets/img/snake.png'
 
 export const MiniGames = () => {
     return (
@@ -7,6 +8,27 @@ export const MiniGames = () => {
                 <h1 className="section-title">Мини-игры</h1>
 
                 <div className="mini-games-container">
+
+                    <div className="game-card">
+                        <div className="game-header">
+                            <div className="game-icon">
+                                <img
+                                    src={snake}
+                                    alt="Пазлы"/>
+                            </div>
+                            <h3 className="game-title">Змейка</h3>
+                        </div>
+                        <div className="game-content">
+                            <div className="game-divider"></div>
+                            <div className="game-text-content">
+                                <p className="game-description">
+                                Классическая игра помогает сосредоточиться на простом действии, отвлекая от тревожных мыслей. Ритмичное движение снижает внутреннее напряжение и стабилизирует эмоциональное состояние.
+                                </p>
+                                <Link className="start-button" to='/mini-games/snake'>Начать игру</Link>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div className="game-card">
                         <div className="game-header">
                             <div className="game-icon">
@@ -20,10 +42,9 @@ export const MiniGames = () => {
                             <div className="game-divider"></div>
                             <div className="game-text-content">
                                 <p className="game-description">
-                                    Расслабляющая игра, в которой вы собираете пазлы с живописными природными видами.
-                                    Завершая изображение, вы погружаетесь в атмосферу умиротворения и покоя.
+                                Восстановление изображения через сбор плиток тренирует внимание и логическое мышление. Этот процесс успокаивает и возвращает ощущение контроля над происходящим.
                                 </p>
-                                <button onClick={() => navigate('/mini-games/puzzle')} className="start-button">Начать игру</button>
+                                <Link className="start-button" to='/mini-games/puzzle'>Начать игру</Link>
                             </div>
                         </div>
                     </div>
@@ -41,10 +62,9 @@ export const MiniGames = () => {
                             <div className="game-divider"></div>
                             <div className="game-text-content">
                                 <p className="game-description">
-                                    Творческая медитация, где вы выбираете цвета и раскрашиваете мандалу, подстраивая
-                                    сложность под свое настроение. Идеальный способ снять напряжение и выразить себя.
+                                Раскрашивание мандал расслабляет, активируя творческое мышление. Выбор цветов и уровней сложности помогает выразить внутреннее состояние и восстановить эмоциональный баланс.
                                 </p>
-                                <button onClick={() => navigate('/mini-games/mandala-coloring')} className="start-button">Начать игру</button>
+                                <Link className="start-button" to='/mini-games/mandala-coloring'>Начать игру</Link>
                             </div>
                         </div>
                     </div>
@@ -62,10 +82,9 @@ export const MiniGames = () => {
                             <div className="game-divider"></div>
                             <div className="game-text-content">
                                 <p className="game-description">
-                                    Антистресс-игра, в которой вы лопаете пузыри в ритме дыхания. Это помогает
-                                    замедлиться, расслабиться и улучшить концентрацию.
+                                Игра учит дышать осознанно, следуя мягкому ритму. Такая дыхательная практика снижает уровень стресса и помогает справляться с паникой.
                                 </p>
-                                <button onClick={() => navigate('/mini-games/breathing-bubbles')} className="start-button">Начать игру</button>
+                                <Link className="start-button" to='/mini-games/breathing-bubbles'>Начать игру</Link>
                             </div>
                         </div>
                     </div>
@@ -83,10 +102,9 @@ export const MiniGames = () => {
                             <div className="game-divider"></div>
                             <div className="game-text-content">
                                 <p className="game-description">
-                                    Игра для осознанного дыхания. Следите за мягким свечением светлячка и дышите в такт
-                                    его движению, чтобы вернуть себе ощущение спокойствия.
+                                Следя за движением светлячка и дыша в заданном ритме, пользователь замедляет дыхание и снижает тревожность. Это упражнение помогает вернуть спокойствие и сосредоточенность.
                                 </p>
-                                <button onClick={() => navigate('/mini-games/breathing-firefly')} className="start-button">Начать игру</button>
+                                <Link className="start-button" to='/mini-games/breathing-firefly'>Начать игру</Link>
                             </div>
                         </div>
                     </div>
@@ -104,10 +122,9 @@ export const MiniGames = () => {
                             <div className="game-divider"></div>
                             <div className="game-text-content">
                                 <p className="game-description">
-                                    Тренировка позитивного мышления. Из предложенных слов составьте вдохновляющие фразы,
-                                    которые помогут вам настроиться на гармонию и уверенность.
+                                Составление предложений из позитивных фраз тренирует фокус на хорошем. Такая практика способствует формированию устойчивого, поддерживающего внутреннего диалога.
                                 </p>
-                                <button onClick={() => navigate('/mini-games/positive-thinking')} className="start-button">Начать игру</button>
+                                <Link className="start-button" to='/mini-games/positive-thinking'>Начать игру</Link>
                             </div>
                         </div>
                     </div>

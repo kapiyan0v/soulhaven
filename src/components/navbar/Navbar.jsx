@@ -2,6 +2,7 @@ import './style.css'
 import {Link, useNavigate} from "react-router-dom";
 import { useUser } from '../../context/UserContext';
 import logo from '../../assets/img/soulhaven.png';
+import { FaBrain } from 'react-icons/fa';
 
 export const Navbar = () => {
     const navigate = useNavigate();

@@ -1,0 +1,169 @@
+.theoretical-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.theoretical-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.theoretical-header h1 {
+    color: #339CCC;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.theoretical-header p {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.theoretical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.theory-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.theory-card:hover {
+    transform: translateY(-5px);
+}
+
+.theory-icon {
+    font-size: 2.5rem;
+    color: #339CCC;
+    margin-bottom: 1rem;
+}
+
+.theory-card h3 {
+    color: #339CCC;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.theory-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.theory-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.theory-section {
+    margin-bottom: 2rem;
+}
+
+.theory-section:last-child {
+    margin-bottom: 0;
+}
+
+.theory-section h2 {
+    color: #339CCC;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.theory-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.theory-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.theory-section li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.theory-section li:before {
+    content: "•";
+    color: #339CCC;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 1280px) {
+    .theoretical-container {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+
+    .theoretical-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .theoretical-header p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .theoretical-container {
+        max-width: 90%;
+        padding: 1.2rem;
+    }
+
+    .theoretical-grid {
+        gap: 1.5rem;
+    }
+
+    .theory-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .theoretical-header h1 {
+        font-size: 2rem;
+    }
+
+    .theoretical-header p {
+        font-size: 1rem;
+    }
+
+    .theory-card {
+        padding: 1.2rem;
+    }
+
+    .theory-icon {
+        font-size: 2rem;
+    }
+
+    .theory-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .theoretical-container {
+        padding: 1rem;
+    }
+
+    .theoretical-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .theoretical-grid {
+        grid-template-columns: 1fr;
+    }
+} 

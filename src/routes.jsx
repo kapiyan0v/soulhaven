@@ -21,6 +21,7 @@ import ProfileCalendar from './pages/profile/ProfileCalendar';
 import ProfileAchievements from './pages/profile/ProfileAchievements';
 import ProfilePrivacy from './pages/profile/ProfilePrivacy';
 import ProfileSettings from './pages/profile/ProfileSettings';
+import { Theoretical } from './pages/theoretical/Theoretical';
 import './styles/in-development.css';
 
 const InDevelopmentPage = ({ title }) => (
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
             { path: 'mini-games/mandala-coloring', element: <MandalaColoring /> },
             { path: 'mini-games/positive-thinking', element: <PositiveThinking /> },
             { path: 'mini-games/breathing-firefly', element: <BreathingFirefly /> },
+            { path: 'theoretical', element: <Theoretical /> },
             { 
                 path: 'consultations', 
                 element: <InDevelopmentPage title="Консультации" />
