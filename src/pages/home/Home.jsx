@@ -18,6 +18,7 @@ export const Home = () => {
     const [loading, setLoading] = useState(true);
     const [logoVisible, setLogoVisible] = useState(true);
     const [showLevelModal, setShowLevelModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const lessons = [
         {
@@ -287,6 +288,24 @@ export const Home = () => {
                         </div>
                     </div>
                 </div>
+                <div className="recommendation-button-wrapper">
+                    <button className="recommendation-button" onClick={() => setShowModal(true)}>
+                        <FaCheckCircle className="recommendation-icon" />
+                        Рекомендовано экспертами в сфере психологической поддержки
+                    </button>
+                </div>
+                {showModal && (
+                    <div className="recommendation-modal-overlay" onClick={() => setShowModal(false)}>
+                        <div className="recommendation-modal" onClick={e => e.stopPropagation()}>
+                            <button className="modal-close-btn" onClick={() => setShowModal(false)}>
+                                <FaTimes />
+                            </button>
+                            <div className="modal-text">
+                                Проверено и одобрено Центром психологического благополучия (при «Akylbaev Research Center» Карагандинского университета им. академика Е.А.Букетова)
+                            </div>
+                        </div>
+                    </div>
+                )}
             </section>
 
             <section className="coursesss">

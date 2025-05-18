@@ -536,6 +536,7 @@
     margin-top: 60px;
 }
 
+
 .specialists-cards {
     display: flex;
     flex-direction: row;
@@ -557,6 +558,23 @@
 .specialists-item h3 {
     font-size: 24px;
     width: 263px;
+}
+
+.recommendation-button-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.recommendation-button {
+    background-color: transparent;
+    color: #339CCC;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 .stars-container {
