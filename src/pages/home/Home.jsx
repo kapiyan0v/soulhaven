@@ -1,14 +1,21 @@
-import './style.css'
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
+
 import dyhanije from '../../assets/img/dyhanije.png'
 import joga from '../../assets/img/joga.png'
 import trevoj from '../../assets/img/trevoj.png'
 import positiv from '../../assets/img/positiv.png'
 import {specialists} from "../../shared/specialists.js";
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import React, { useRef, useEffect, useState } from 'react';
 import Loader from './Loader';
-import snake from '../../assets/img/snake.png'
+import snake from '../../assets/img/snake.svg';
+import pazly from '../../assets/img/pazly.svg';
+import mandaly from '../../assets/img/mandaly.svg';
+import bubble from '../../assets/img/bubble.svg';
+import fly from '../../assets/img/fly.svg';
+import words from '../../assets/img/words.svg';
 import { FaCheckCircle, FaTimes } from 'react-icons/fa';
+import './style.css';
+import './adaptive.css'
 
 export const Home = () => {
     const navigate = useNavigate();
@@ -104,59 +111,50 @@ export const Home = () => {
                         <div className="feature-text">
                             <p>Техники осознанного дыхания для расслабления за считанные минуты</p>
                         </div>
-                        <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="9" stroke="#5398c5" stroke-width="2"/>
-                            <path d="M12 7V12L15 15" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="60" height="66" viewBox="0 0 60 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.1666 2.25H36.8333M30 22.75V36.4167L36.8333 43.25M57.3333 36.4167C57.3333 51.5125 45.0957 63.75 30 63.75C14.9042 63.75 2.66663 51.5125 2.66663 36.4167C2.66663 21.3209 14.9042 9.08333 30 9.08333C45.0957 9.08333 57.3333 21.3209 57.3333 36.4167Z" stroke="#339CCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+
                     </div>
 
                     <div className="feature-card">
                         <div className="feature-text">
                             <p>Уникальные мини-игры, которые помогут отвлечься и сконцентрироваться</p>
                         </div>
-                        <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L15 8L21 9L17 14L18 20L12 17.5L6 20L7 14L3 9L9 8L12 2Z" stroke="#5398c5"
-                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.3333 71.7501H54.6667M41 71.7501V58.0834M41 58.0834C31.5651 58.0834 23.9167 50.4349 23.9167 41.0001V20.5001M41 58.0834C50.4349 58.0834 58.0833 50.4349 58.0833 41.0001V20.5001M58.0833 20.5001C58.0833 16.7261 55.0239 13.6667 51.25 13.6667H30.75C26.9761 13.6667 23.9167 16.7261 23.9167 20.5001M58.0833 20.5001H63.2083C67.9258 20.5001 71.75 24.3243 71.75 29.0417C71.75 33.7592 67.9258 37.5834 63.2083 37.5834H58.0833M23.9167 20.5001H18.7917C14.0742 20.5001 10.25 24.3243 10.25 29.0417C10.25 33.7592 14.0742 37.5834 18.7917 37.5834H23.9167" stroke="#339CCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+
                     </div>
 
                     <div className="feature-card">
                         <div className="feature-text">
                             <p>Медитации, помогающие снять напряжение и восстановить энергию</p>
                         </div>
-                        <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#5398c5" stroke-width="2"
-                                  stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M53.7297 16.0095C54.1785 14.8874 53.3521 13.6667 52.1435 13.6667H31.9814C31.2461 13.6667 30.5933 14.1373 30.3607 14.8349L21.2496 42.1682C20.8809 43.2744 21.7043 44.4167 22.8703 44.4167H31.9788C33.0902 44.4167 33.9057 45.4612 33.6361 46.5394L28.8293 65.7666C28.4091 67.4475 30.4695 68.6141 31.6946 67.3889L62.0005 37.0831C63.0767 36.0069 62.3144 34.1667 60.7925 34.1667H48.99C47.7815 34.1667 46.955 32.9461 47.4039 31.824L53.7297 16.0095Z" stroke="#339CCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+
                     </div>
 
                     <div className="feature-card">
                         <div className="feature-text">
                             <p>Курсы, созданные профессионалами для управления тревожностью</p>
                         </div>
-                        <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
-                                stroke="#5398c5" stroke-width="2"/>
-                            <path d="M16 21V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V21" stroke="#5398c5"
-                                  stroke-width="2"/>
+                        <svg width="83" height="82" viewBox="0 0 83 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M41.5 47.8333V41M41.5 47.8333V54.6667M41.5 47.8333C27.6666 47.8333 13.8333 44.4167 14.0452 37.5833M41.5 47.8333C55.3333 47.8333 69.1667 44.4167 68.9548 37.5833M14.0452 37.5833C13.9096 39.7462 13.8333 42.0484 13.8333 44.4167C13.8333 55.0463 15.3704 64.3472 16.9074 65.6759C18.4444 67.0046 29.2037 68.3333 41.5 68.3333C53.7963 68.3333 64.5555 67.0046 66.0926 65.6759C67.6296 64.3472 69.1666 55.0463 69.1666 44.4167C69.1666 42.0484 69.0904 39.7462 68.9548 37.5833M14.0452 37.5833C14.5182 30.0384 15.7128 24.1901 16.9074 23.1574C18.4444 21.8287 31.125 20.8185 31.125 20.8185M68.9548 37.5833C68.4818 30.0384 67.2872 24.1901 66.0926 23.1574C64.5555 21.8287 51.875 20.8185 51.875 20.8185M31.125 20.8185C34.3116 20.6179 37.8376 20.5 41.5 20.5C45.1624 20.5 48.6884 20.6179 51.875 20.8185M31.125 20.8185V17.0833C31.125 11.0186 36.7873 10.25 41.5 10.25C46.2126 10.25 51.875 11.0186 51.875 17.0833V20.8185" stroke="#339CCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+
                     </div>
 
                     <div className="feature-card feature-wide">
                         <div className="feature-text">
                             <p>Задания, развивающие навыки саморегуляции и позитивного мышления</p>
                         </div>
-                        <svg className="feature-icon" viewBox="0 0 24 24" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 5H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M3 12H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M3 19H21" stroke="#5398c5" stroke-width="2" stroke-linecap="round"/>
+                        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.3333 27.3333H54.6666M27.3333 40.9999H54.6666M27.3333 54.6666H41M11.9583 40.9999C11.9583 18.7916 18.7916 11.9583 41 11.9583C63.2083 11.9583 70.0416 18.7916 70.0416 40.9999C70.0416 63.2082 63.2083 70.0416 41 70.0416C18.7916 70.0416 11.9583 63.2082 11.9583 40.9999Z" stroke="#339CCC" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
+
                     </div>
                 </div>
 
@@ -192,7 +190,7 @@ export const Home = () => {
                         <div className="game-header">
                             <div className="game-icon">
                                 <img
-                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9IjIzIiBoZWlnaHQ9IjIzIiBmaWxsPSIjOUJEOEY3IiBzdHJva2U9IiM3QTdBN0EiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyNiIgeT0iMSIgd2lkdGg9IjIzIiBoZWlnaHQ9IjIzIiBmaWxsPSIjRkZFNDRDIiBzdHJva2U9IiM3QTdBN0EiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIxIiB5PSIyNiIgd2lkdGg9IjIzIiBoZWlnaHQ9IjIzIiBmaWxsPSIjRkY5ODQ4IiBzdHJva2U9IiM3QTdBN0EiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyNiIgeT0iMjYiIHdpZHRoPSIyMyIgaGVpZ2h0PSIyMyIgZmlsbD0iIzVDRDY1QyIgc3Ryb2tlPSIjN0E3QTdBIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+"
+                                    src={pazly}
                                     alt="Пазлы"/>
                             </div>
                             <h3 className="game-title">Собери пазлы</h3>
@@ -212,8 +210,8 @@ export const Home = () => {
                         <div className="game-header">
                             <div className="game-icon">
                                 <img
-                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDUwVjEwSDIwVjUwSDEwWiIgZmlsbD0iI0ZGNDQ0NCIvPgo8cGF0aCBkPSJNMjAgNTBWNUgzMFY1MEgyMFoiIGZpbGw9IiNGRkNDMDAiLz4KPHBhdGggZD0iTTMwIDUwVjBINDBWNTBIMzBaIiBmaWxsPSIjNDRBQUZGIi8+Cjwvc3ZnPg=="
-                                    alt="Мандалы"/>
+                                    src={mandaly}
+                                    alt="мандалы"/>
                             </div>
                             <h3 className="game-title">Мандалы</h3>
                         </div>
@@ -232,7 +230,7 @@ export const Home = () => {
                         <div className="game-header">
                             <div className="game-icon">
                                 <img
-                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTUiIGN5PSIxNSIgcj0iMTAiIGZpbGw9IiM5QkQ4RjciIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjM1IiBjeT0iMjAiIHI9IjciIGZpbGw9IiM5QkQ4RjciIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMzUiIHI9IjUiIGZpbGw9IiM5QkQ4RjciIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg=="
+                                    src={bubble}
                                     alt="Лопни пузыри"/>
                             </div>
                             <h3 className="game-title">Лопни пузыри</h3>
@@ -252,7 +250,7 @@ export const Home = () => {
                         <div className="game-header">
                             <div className="game-icon">
                                 <img
-                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDEwSDQwVjQ1SDEwVjEwWiIgZmlsbD0iIzlCRDhGNyIgc3Ryb2tlPSIjMzM5Q0NDIiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTIwIDVIMzBWMTBIMjBWNVoiIGZpbGw9IiNGRkNDMDAiIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjI1IiBjeT0iMjUiIHI9IjUiIGZpbGw9IiNGRkNDMDAiLz4KPHBhdGggZD0iTTIyIDMwQzIyIDMwIDIzIDM1IDI1IDM1QzI3IDM1IDI4IDMwIDI4IDMwIiBzdHJva2U9IiMzMzlDQ0MiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTUgMjBDMTUgMjAgMjAgMjIgMjUgMjJDMzAgMjIgMzUgMjAgMzUgMjAiIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg=="
+                                    src={fly}
                                     alt="Следи за светлячком"/>
                             </div>
                             <h3 className="game-title">Следи за светлячком</h3>
@@ -272,8 +270,8 @@ export const Home = () => {
                         <div className="game-header">
                             <div className="game-icon">
                                 <img
-                                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMTAiIHk9IjM1IiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiM2M0M1REEiIHN0cm9rZT0iIzMzOUNDQyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjMwIiB5PSIzNSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjNUNENjVDIiBzdHJva2U9IiMzMzlDQ0MiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0ZGQ0MwMCIgc3Ryb2tlPSIjMzM5Q0NDIiBzdHJva2Utd2lkdGg9IjIiLz4KPHRleHQgeD0iMTIiIHk9IjQzIiBmaWxsPSJibGFjayIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjgiPkE8L3RleHQ+Cjx0ZXh0IHg9IjMyIiB5PSI0MyIgZmlsbD0iYmxhY2siIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI4Ij5DPC90ZXh0Pgo8dGV4dCB4PSIyMiIgeT0iMjgiIGZpbGw9ImJsYWNrIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCI+QjwvdGV4dD4KPC9zdmc+"
-                                    alt="Соедини слова"/>
+                                    src={words}
+                                    alt="Соедини слов"/>
                             </div>
                             <h3 className="game-title">Соедини слова</h3>
                         </div>
@@ -290,7 +288,10 @@ export const Home = () => {
                 </div>
                 <div className="recommendation-button-wrapper">
                     <button className="recommendation-button" onClick={() => setShowModal(true)}>
-                        <FaCheckCircle className="recommendation-icon" />
+                        <svg width="53" height="52" viewBox="0 0 53 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M37.5417 19.5L22.0833 34.6667L15.4582 28.1667M46.375 26C46.375 36.7696 37.4767 45.5 26.5 45.5C15.5233 45.5 6.625 36.7696 6.625 26C6.625 15.2304 15.5233 6.5 26.5 6.5C37.4767 6.5 46.375 15.2304 46.375 26Z" stroke="#33CC5C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
                         Рекомендовано экспертами в сфере психологической поддержки
                     </button>
                 </div>
@@ -397,11 +398,14 @@ export const Home = () => {
                         <div className="stars-grid">
                             {lessons.map((lesson, index) => (
                                 <div key={index} className="stars-card">
-                                    <p className="stars-icon">{lesson.stars}</p>
-                                    <h2 className="stars-card-title">{lesson.title}</h2>
+                                    <div className="stars-top">
+                                        <p className="stars-icon">{lesson.stars}</p>
+                                        <h2 className="stars-card-title">{lesson.title}</h2>
+                                    </div>
                                     <p className="stars-description">{lesson.description}</p>
                                     <button className="stars-button">Подробнее</button>
                                 </div>
+
                             ))}
                         </div>
                     </div>

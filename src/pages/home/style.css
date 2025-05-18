@@ -9,7 +9,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    padding-top: 120px;
+    padding-bottom: 200px;
 }
 
 /* Stars background */
@@ -20,7 +21,12 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    background-image: url("../../assets/img/main-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 .star {
     position: absolute;
@@ -104,7 +110,6 @@
 
 .cta-button {
     background-color: #5398c5;
-    margin-bottom: 140px;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -112,6 +117,7 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 0;
 }
 
 .cta-button:hover {
@@ -119,6 +125,7 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(83, 152, 197, 0.3);
 }
+
 
 /* Features section styles */
 .features-section {
@@ -313,14 +320,18 @@
 }
 
 .game-icon img {
-    max-width: 45px;
-    max-height: 45px;
+    max-width: 89px;
+    max-height: 89px;
 }
 
 .game-title {
     color: #339CCC;
-    font-size: 22px;
-    font-weight: normal;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
 }
 
 .game-content {
@@ -347,11 +358,11 @@
 }
 
 .start-button {
-    background-color: #339CCC;
+    background: rgba(51, 156, 204, 0.85);
     color: white;
     padding: 12px 25px;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -377,8 +388,21 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .all-courses-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
 .title {
     color: #339CCC;
     font-size: 32px;
@@ -407,6 +431,17 @@
     gap: 20px;
 }
 
+@media (max-width: 992px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1440px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 .course-card {
     background-color: #fff;
     border-radius: 10px;
@@ -416,8 +451,8 @@
 }
 
 .course-image {
-    width: 140px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border-radius: 15px;
 }
@@ -436,7 +471,6 @@
 .course-title {
     color: #339CCC;
     font-size: 22px;
-    margin: 0 0 5px 0;
 }
 
 .course-subtitle {
@@ -528,36 +562,69 @@
     background-color: #f6f9f7;
     margin-top: 60px;
 }
-
 .specialists {
     display: flex;
     flex-direction: column;
-    color: #339CCC;
+    align-items: center;
     margin-top: 60px;
+    color: #339CCC;
 }
-
 
 .specialists-cards {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .specialists-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 300px;
 }
+
+.specialists-item img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.specialists-item h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.specialists-item p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* Адаптив — 1 в ряд на телефонах */
+@media (max-width: 768px) {
+    .specialists-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .specialists-item {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
 
 .specialists-item img {
     width: 302px;
     height: 403px;
     margin-bottom: 10px;
-}
-
-.specialists-item h3 {
-    font-size: 24px;
-    width: 263px;
 }
 
 .recommendation-button-wrapper {
@@ -566,6 +633,14 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(51, 156, 204, 1);
+
 }
 
 .recommendation-button {
@@ -574,17 +649,38 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
 
 }
+.recommendation-button:hover {
+    border-color: #339CCC;
+    background-color: rgba(51, 156, 204, 0.05);
+}
 
+@media (max-width: 600px) {
+    .recommendation-button {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        padding: 16px;
+    }
+
+    .recommendation-button svg {
+        margin-bottom: 8px;
+        width: 32px;
+        height: 32px;
+    }
+}
 .stars-container {
     margin-top: 100px;
     margin-bottom: 100px;
     background: linear-gradient(to bottom, #e6f0fa, #d6e9f8);
-    position: relative;
-    overflow: hidden;
     padding: 40px 16px;
 }
+
 .stars-title {
     font-size: 2rem;
     font-weight: bold;
@@ -592,46 +688,86 @@
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .stars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .stars-card {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    transition: transform 0.3s;
+}
+
+.stars-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Верхняя синяя часть */
+.stars-top {
+    background-color: #339CCC;
+    color: #fff;
+    padding: 1rem;
     text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
 .stars-icon {
-    color: #339CCC;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
 }
+
 .stars-card-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #339CCC;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
 }
+
+
 .stars-description {
-    color: #4b5563;
-    margin-bottom: 1rem;
+    color: rgba(51, 156, 204, 1);
+    text-align: center;
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 45px;
+
+    font-family: Inter;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0%;
+
 }
+
+/* Кнопка */
 .stars-button {
-    background: #339CCC;
-    color: #ffffff;
-    padding: 0.5rem 1.5rem;
-    border-radius: 9999px;
+    align-self: center;
+    background: rgba(51, 156, 204, 1);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
     border: none;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: background 0.2s;
 }
+
 .stars-button:hover {
-    background: #1d4ed8;
+    background: #2a90b8;
 }
 
 .consultation {
@@ -644,7 +780,7 @@
 }
 
 .consultation-inner {
-    background-color: #339CCC;
+    background: rgba(51, 156, 204, 0.85);
     border-radius: 30px;
     padding: 50px 100px;
     width: 1000px;
@@ -661,6 +797,14 @@
 
 .consultation-inner p {
     font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    width: 423px;
+    opacity: 0.78;
+
 }
 
 .consultation-forms {
@@ -675,9 +819,9 @@
     border: 1px solid #fff;
     color: #fff;
     font-size: 20px;
-    border-radius: 12px;
     padding: 26px 72px;
     text-align: center;
+    border-radius: 15px!important;
 }
 
 .consultation-forms input::placeholder {
@@ -688,6 +832,53 @@
 .consultation-forms input:first-child {
     margin-right: 40px;
 }
+@media (max-width: 768px) {
+    .consultation {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .consultation-inner {
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .consultation-inner h3 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .consultation-inner p {
+        font-size: 16px;
+        width: 100%;
+        max-width: 90%;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .consultation-forms {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .consultation-forms input {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px 24px;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .consultation-forms input:first-child {
+        margin-right: 0;
+    }
+}
+
 
 .mini-games-section {
     padding: 4rem 0;
@@ -736,7 +927,7 @@
 }
 
 .mini-games-section .game-card p {
-    color: #666;
+    color: #339CCC!important;
     margin: 0;
     line-height: 1.5;
 }

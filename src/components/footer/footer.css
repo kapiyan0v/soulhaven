@@ -128,4 +128,40 @@
   .footer-wave svg {
     height: 60px;
   }
-} 
+}
+
+
+@media (max-width: 900px) {
+  .footer-content {
+    padding: 0 16px;
+    gap: 24px;
+  }
+  .footer-col {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+    margin-bottom: 24px;
+  }
+
+  .footer-col.logo {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .footer-wave svg {
+    height: 60px;
+  }
+}

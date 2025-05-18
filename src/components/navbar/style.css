@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 0;
+    gap: 1rem;
 }
 
 .logo {
@@ -26,6 +26,7 @@ header {
     align-items: center;
     height: auto;
     margin-right: 3rem;
+    flex-shrink: 0;
 }
 
 .logo p {
@@ -36,12 +37,10 @@ header {
 
 .nav-menu {
     display: flex;
-    gap: 2.5rem;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
     flex: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .nav-menu li {
@@ -49,17 +48,20 @@ header {
 }
 
 .nav-menu a {
-    color: #213547;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 14px!important;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: #000000;
     text-decoration: none;
-    font-weight: 500;
     transition: color 0.2s;
-    padding: 0.5rem 0;
-    font-size: 1rem;
 }
 
 .nav-menu a:hover {
     color: #339CCC;
 }
+
 
 .login-btn {
     background-color: #339CCC;
@@ -172,7 +174,7 @@ header {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
     .container {
         padding: 1rem;
     }
@@ -198,5 +200,85 @@ header {
 @media (max-width: 480px) {
     .container {
         padding: 0.5rem;
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger div {
+    height: 3px;
+    background: #339CCC;
+    border-radius: 3px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.mobile-menu li {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 1199px) {
+    .nav-menu {
+        display: none!important;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .exit-btn-burger {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 250px) {
+    .header-content {
+        flex-wrap: nowrap;
+    }
+
+    .logo,
+    .exit-btn-burger {
+        flex-shrink: 0;
+    }
+
+    .exit-btn-burger {
+        margin-left: auto;
+    }
+
+    .login-btn,
+    .logout-btn {
+        white-space: nowrap;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
