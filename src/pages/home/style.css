@@ -439,7 +439,7 @@
 
 @media (min-width: 1440px) {
     .courses-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 .course-card {
@@ -586,7 +586,6 @@
     align-items: center;
     text-align: center;
     flex: 1 1 250px;
-    max-width: 300px;
 }
 
 .specialists-item img {
