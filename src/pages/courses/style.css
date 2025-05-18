@@ -1,7 +1,9 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Header */
@@ -129,7 +131,24 @@ header {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
     .course-cards {
         grid-template-columns: 1fr;
     }
@@ -140,5 +159,11 @@ header {
 
     .section-title {
         font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
     }
 }

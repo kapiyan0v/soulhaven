@@ -1,6 +1,6 @@
 .hero-section {
     position: relative;
-    height: 50vh;
+    height: 70vh;
     width: 100%;
     background-color: #f6f9f7;
     overflow: hidden;
@@ -104,6 +104,7 @@
 
 .cta-button {
     background-color: #5398c5;
+    margin-bottom: 140px;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -177,7 +178,7 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     gap: 20px;
 }
 
@@ -278,17 +279,18 @@
 }
 
 .mini-games-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .game-card {
-    width: 30%;
-    margin-bottom: 40px;
-    min-width: 300px;
+    width: 100%;
+    margin-bottom: 0;
+    min-width: unset;
 }
 
 .game-header {
@@ -365,7 +367,9 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header {
@@ -566,7 +570,7 @@
 .stars-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #2563eb;
+    color: #339CCC;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -585,14 +589,14 @@
     text-align: center;
 }
 .stars-icon {
-    color: #3b82f6;
+    color: #339CCC;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 .stars-card-title {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #2563eb;
+    color: #339CCC;
     margin-bottom: 0.5rem;
 }
 .stars-description {
@@ -600,7 +604,7 @@
     margin-bottom: 1rem;
 }
 .stars-button {
-    background: #2563eb;
+    background: #339CCC;
     color: #ffffff;
     padding: 0.5rem 1.5rem;
     border-radius: 9999px;
@@ -830,5 +834,39 @@
   .loader-logo { font-size: 2rem; }
   .loader-waves { width: 95vw; height: 60px; }
   .loader-waves .wave-svg { height: 60px; }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .mini-games-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    .mini-games-container {
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 1rem;
+    }
+    
+    .game-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
 }
 

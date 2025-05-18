@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import './profile.css';
+import logo from '../../assets/img/soulhaven.png'
 
 const sidebarLinks = [
   { to: '/profile', label: 'Профиль', icon: '👤' },
@@ -36,10 +37,8 @@ const ProfileLayout = () => {
             ))}
           </ul>
         </nav>
-        <div className="profile-chatbot">
-          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="chatbot" />
-          <button className="chat-btn">Начать чат</button>
-          <div className="chat-support">Поддержка 24/7</div>
+        <div style={{marginTop: 'auto', width: '100%', padding: '0 0 32px 0', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <img src={logo} alt="soulhaven" />
         </div>
       </aside>
       <main className="profile-main">

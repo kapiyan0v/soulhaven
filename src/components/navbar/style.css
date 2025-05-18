@@ -5,9 +5,11 @@ header {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-content {
@@ -112,9 +114,67 @@ header {
     color: #fff;
 }
 
+@media (max-width: 1280px) {
+    .container {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        margin-right: 2rem;
+    }
+
+    .logo img {
+        max-width: 140px;
+    }
+
+    .login-btn, .logout-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 1.2rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        margin-right: 1.5rem;
+    }
+
+    .logo img {
+        max-width: 120px;
+    }
+
+    .login-btn, .logout-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        margin-left: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 0 1rem;
+        padding: 1rem;
     }
 
     .nav-menu {
@@ -132,5 +192,11 @@ header {
     .login-btn {
         margin-left: 1rem;
         padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
     }
 }

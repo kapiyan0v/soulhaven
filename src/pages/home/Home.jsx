@@ -75,14 +75,14 @@ export const Home = () => {
                 </div>
 
                 <div className="wave-container">
-                    <svg className="wave-svg wave1" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="wave-svg wave1" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
                     </svg>
-                    <svg className="wave-svg wave2" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="wave-svg wave2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
                     </svg>
 
-                    <svg className="wave-svg wave3" viewBox="0 0 1726 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="wave-svg wave3" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M227.681 42.9066C144.667 -26.626 41.8657 13.9347 0.841553 42.9066V185H1494.05H1801.51V42.9066C1724.2 -9.56225 1584.06 -17.3847 1475.34 42.9066C1388.36 91.1396 1259.25 63.0037 1205.57 42.9066C1094.21 -16.7339 993.098 18.0564 956.462 42.9066C900.958 69.4302 768.233 106.563 681.359 42.9066C594.484 -20.75 490.717 16.383 449.693 42.9066C410.278 71.8785 310.694 112.439 227.681 42.9066Z" fill="#AAE6FF" fill-opacity="0.4"/>
                     </svg>
 
@@ -274,20 +274,10 @@ export const Home = () => {
                 <div className="star-background">
                 </div>
 
-                <div id="notification" className="notification">
-                    <div className="notification-header">
-                        <div className="notification-title">Уведомление</div>
-                        <button id="closeNotification" className="close-btn">✕</button>
-                    </div>
-                    <div className="notification-content">
-                        Просмотр остальных курсов будет доступен только после достижения 10 уровня!
-                    </div>
-                </div>
-
                 <div className="container">
                     <div className="header">
                         <h1 className="title">Наши курсы</h1>
-                        <button id="allCoursesBtn" className="all-courses-btn">
+                        <button id="allCoursesBtn" className="all-courses-btn" onClick={() => navigate('/courses')}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -309,7 +299,7 @@ export const Home = () => {
                             <div className="course-info">
                                 <h2 className="course-title">Осознанное дыхание</h2>
                                 <p className="course-subtitle">Техники для быстрого расслабления</p>
-                                <button className="details-btn">Подробнее</button>
+                                <button className="details-btn"  onClick={() => { navigate('/course-start', { state: { courseName: 'Осознанное дыхание' } }); }}>Подробнее</button>
                             </div>
                         </div>
 
@@ -320,7 +310,7 @@ export const Home = () => {
                             <div className="course-info">
                                 <h2 className="course-title">Йога для гармонии</h2>
                                 <p className="course-subtitle">Поддержание баланса и расслабления</p>
-                                <button className="details-btn">Подробнее</button>
+                                <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Йога для гармонии' } }); }}>Подробнее</button>
                             </div>
                         </div>
                         <div className="course-card">
@@ -330,7 +320,7 @@ export const Home = () => {
                             <div className="course-info">
                                 <h2 className="course-title">Управление тревожностью</h2>
                                 <p className="course-subtitle">Стратегия снижения стресса</p>
-                                <button className="details-btn">Подробнее</button>
+                                <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Управление тревожностью' } }); }}>Подробнее</button>
                             </div>
                         </div>
 
@@ -341,7 +331,7 @@ export const Home = () => {
                             <div className="course-info">
                                 <h2 className="course-title">Путь к позитиву</h2>
                                 <p className="course-subtitle">Укрепление уверенности и радости в жизни</p>
-                                <button className="details-btn">Подробнее</button>
+                                <button className="details-btn" onClick={() => { navigate('/course-start', { state: { courseName: 'Путь к позитиву' } }); }}>Подробнее</button>
                             </div>
                         </div>
                     </div>

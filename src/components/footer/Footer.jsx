@@ -26,7 +26,6 @@ const Footer = () => (
         <ul>
           <li><span className="footer-icon">📞</span> +7 (777) 523-13-93<br />+7 (708) 842-39-72</li>
           <li><span className="footer-icon">✉️</span> soulhaven@gmail.com</li>
-          <li><span className="footer-icon">📷</span> soulhaven.kz</li>
         </ul>
       </div>
       <div className="footer-col logo">

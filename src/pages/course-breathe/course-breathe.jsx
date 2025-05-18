@@ -4,7 +4,7 @@ import cel from '../../assets/img/cel.png'
 import React from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
 import { FaBookOpen, FaBrain, FaHands, FaVideo, FaCheckCircle, FaCog, FaLock, FaTimesCircle } from 'react-icons/fa';
-import { BsStars } from 'react-icons/bs';
+import logo from '../../assets/img/soulhaven.png'
 import { useUser } from '../../context/UserContext';
 
 const MONTHS = [
@@ -71,11 +71,7 @@ export const CourseBreathe = () => {
                     </ul>
                 </nav>
                 <div style={{marginTop: 'auto', width: '100%', padding: '0 0 32px 0', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <div style={{background: '#e6f4fa', borderRadius: 16, padding: 16, width: 170, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="chatbot" style={{width: 60, height: 60, marginBottom: 8}} />
-                        <button style={{background: '#339CCC', color: '#fff', border: 'none', borderRadius: 20, padding: '8px 24px', fontSize: '1rem', marginBottom: 8, cursor: 'pointer'}}>Начать чат</button>
-                        <div style={{color: '#339CCC', fontSize: '0.95rem'}}>Поддержка 24/7</div>
-                    </div>
+                <img src={logo} alt="soulhaven" />
                 </div>
             </aside>
 
