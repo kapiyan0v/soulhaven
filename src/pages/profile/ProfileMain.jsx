@@ -76,7 +76,6 @@ const ProfileMain = () => {
             3. Что я могу сделать прямо сейчас, чтобы помочь себе?<br /><br />
             <b>Часто тревожные мысли преувеличивают опасность.</b> Разбор ситуации логически помогает вернуть контроль и снизить уровень стресса.
           </div>
-          <img className="tip-img" src="https://cdn-icons-png.flaticon.com/512/2909/2909769.png" alt="yoga" />
         </div>
         <div className="profile-user-card">
           <div className="user-avatar">

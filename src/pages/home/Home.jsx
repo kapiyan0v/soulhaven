@@ -8,6 +8,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import React, { useRef, useEffect, useState } from 'react';
 import Loader from './Loader';
 import snake from '../../assets/img/snake.png'
+import { FaCheckCircle, FaTimes } from 'react-icons/fa';
 
 export const Home = () => {
     const navigate = useNavigate();
@@ -16,6 +17,7 @@ export const Home = () => {
     const location = useLocation();
     const [loading, setLoading] = useState(true);
     const [logoVisible, setLogoVisible] = useState(true);
+    const [showLevelModal, setShowLevelModal] = useState(false);
 
     const lessons = [
         {
@@ -294,7 +296,7 @@ export const Home = () => {
                 <div className="container">
                     <div className="header">
                         <h1 className="title">Наши курсы</h1>
-                        <button id="allCoursesBtn" className="all-courses-btn" onClick={() => navigate('/courses')}>
+                        <button id="allCoursesBtn" className="all-courses-btn" onClick={() => setShowLevelModal(true)}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -372,7 +374,7 @@ export const Home = () => {
             <section>
                 <div className="stars-container">
                     <div className="stars-content">
-                        <h1 className="stars-title">Актуальные учения</h1>
+                        <h1 className="stars-title">Актуальные челленджи</h1>
                         <div className="stars-grid">
                             {lessons.map((lesson, index) => (
                                 <div key={index} className="stars-card">
@@ -397,6 +399,19 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {showLevelModal && (
+                    <div className="recommendation-modal-overlay" onClick={() => setShowLevelModal(false)}>
+                        <div className="recommendation-modal" onClick={e => e.stopPropagation()}>
+                            <button className="modal-close-btn" onClick={() => setShowLevelModal(false)}>
+                                <FaTimes />
+                            </button>
+                            <div className="modal-text">
+                            Просмотр остальных курсов будет доступен только после достижения 10 уровня!
+                            </div>
+                        </div>
+                    </div>
+                )}
         </>
     )
 }

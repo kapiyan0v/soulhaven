@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../../styles/mini-games.css';
 import snake from '../../assets/img/snake.png'
+import React, { useState } from 'react';
+import { FaCheckCircle, FaTimes } from 'react-icons/fa';
 
 export const MiniGames = () => {
+    const [showModal, setShowModal] = useState(false);
+
     return (
         <section className="minigames">
                 <h1 className="section-title">Мини-игры</h1>
@@ -129,6 +133,25 @@ export const MiniGames = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="recommendation-btn-wrapper">
+                    <button className="recommendation-btn" onClick={() => setShowModal(true)}>
+                        <FaCheckCircle className="recommendation-icon" />
+                        Рекомендовано экспертами в сфере психологической поддержки
+                    </button>
+                </div>
+                {showModal && (
+                    <div className="recommendation-modal-overlay" onClick={() => setShowModal(false)}>
+                        <div className="recommendation-modal" onClick={e => e.stopPropagation()}>
+                            <button className="modal-close-btn" onClick={() => setShowModal(false)}>
+                                <FaTimes />
+                            </button>
+                            <div className="modal-text">
+                                Проверено и одобрено Центром психологического благополучия (при «Akylbaev Research Center» Карагандинского университета им. академика Е.А.Букетова)
+                            </div>
+                        </div>
+                    </div>
+                )}
             </section>
     );
 };

@@ -688,4 +688,76 @@
 @keyframes fadeInOut {
     0%, 100% { opacity: 0.6; }
     50% { opacity: 1; }
+}
+
+/* Center the recommendation button */
+.recommendation-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.recommendation-btn {
+    display: flex;
+    align-items: center;
+    background: #f4fbf7;
+    color: #339CCC;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(51, 156, 204, 0.05);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    font-weight: 500;
+    gap: 0.5rem;
+}
+.recommendation-btn:hover {
+    background: #e6f7ee;
+    box-shadow: 0 4px 16px rgba(51, 156, 204, 0.10);
+}
+.recommendation-icon {
+    color: #22c55e;
+    font-size: 1.4em;
+    margin-right: 0.5rem;
+}
+
+/* Modal styles */
+.recommendation-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.recommendation-modal {
+    background: #22c55e;
+    color: #fff;
+    border-radius: 16px;
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
+    max-width: 420px;
+    width: 90vw;
+    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+    position: relative;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+.modal-text {
+    margin-top: 1.5rem;
+    line-height: 1.5;
 } 
