@@ -28,7 +28,7 @@ const MyHistory = () => {
 
     // Only show 'Профиль' if not logged in
     const filteredLinks = user ? sidebarLinks : [sidebarLinks[0]];
-
+    user.username = 'Nazira';
     return (
         <div className="profile-layout">
             <aside className="profile-sidebar">
