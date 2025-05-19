@@ -99,7 +99,28 @@ const MyHistory = () => {
 
                 <div className="calendar-card">
                     <div className="calendar-grid">
-                        <img src={calendar} alt={'calendar'}></img>
+                        <div className="profile-calendar-card">
+                            <div className="calendar-header">Май 2025</div>
+                            <div className="calendar-grid">
+                                {/* Simple static calendar for illustration */}
+                                <div className="calendar-row calendar-days">
+                                    <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+                                </div>
+                                {[...Array(5)].map((_, i) => (
+                                    <div className="calendar-row" key={i}>
+                                        {[...Array(7)].map((_, j) => {
+                                            const dayNumber = i * 7 + j + 1;
+                                            return (
+                                                <span key={j} className={dayNumber === 19 ? 'calendar-active' : ''}>
+          {dayNumber <= 31 ? dayNumber : ''}
+        </span>
+                                            );
+                                        })}
+                                    </div>
+                                ))}
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
