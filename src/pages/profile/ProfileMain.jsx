@@ -2,6 +2,7 @@ import React from 'react';
 import { useUser } from '../../context/UserContext';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import './newStyle.css';
 import person from '../../assets/img/person.svg';
 import calendar from "../../assets/calendar.svg";
 
@@ -17,6 +18,7 @@ const ProfileMain = () => {
   }
   return (
     <div className="profile-main-content">
+      <div className="top-section">
       <div className="left-column">
         <div className="user-info-card">
           <div className="user-info-top">
@@ -59,14 +61,36 @@ const ProfileMain = () => {
 
       <div className="calendar-card">
         <div className="calendar-grid">
-          <img src={calendar} alt={'calendar'}></img>
+          <div className="profile-calendar-card">
+            <div className="calendar-header">Май 2025</div>
+            <div className="calendar-grid">
+              {/* Simple static calendar for illustration */}
+              <div className="calendar-row calendar-days">
+                <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+              </div>
+              {[...Array(5)].map((_, i) => (
+                  <div className="calendar-row" key={i}>
+                    {[...Array(7)].map((_, j) => {
+                      const dayNumber = i * 7 + j + 1;
+                      return (
+                          <span key={j} className={dayNumber === 19 ? 'calendar-active' : ''}>
+          {dayNumber <= 31 ? dayNumber : ''}
+        </span>
+                      );
+                    })}
+                  </div>
+              ))}
+
+            </div>
+          </div>
         </div>
+      </div>
       </div>
       <div className="profile-progress-row">
         <div className="profile-progress-card done">
           <div className="progress-title">Осознанное дыхание</div>
           <div className="progress-desc">Техники для быстрого расслабления</div>
-          <div className="progress-value">100%</div>
+          <div className="progress-value">0%</div>
         </div>
         <div className="profile-progress-card">
           <div className="progress-title">Йога для гармонии</div>

@@ -1,0 +1,29 @@
+.profile-main-content {
+    padding: 2rem;
+}
+
+.top-section {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.calendar-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.calendar-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
