@@ -23,6 +23,10 @@ import ProfilePrivacy from './pages/profile/ProfilePrivacy';
 import ProfileSettings from './pages/profile/ProfileSettings';
 import { Theoretical } from './pages/theoretical/Theoretical';
 import './styles/in-development.css';
+import ProfileCabinet from "./pages/profile/ProfileCabinet.jsx";
+import MyHistory from "./pages/myhistory/MyHistory.jsx";
+
+
 
 const InDevelopmentPage = ({ title }) => (
     <div className="in-development">
@@ -66,12 +70,17 @@ const router = createBrowserRouter([
                 path: 'challenges/3-breath',
                 element: <ChallengeBreath />
             },
+            {
+                path: 'my-history',
+                element: <MyHistory />
+            },
             { 
                 path: 'profile', 
                 element: <ProfileLayout />,
                 children: [
                     { index: true, element: <ProfileMain /> },
                     { path: 'achievements', element: <ProfileAchievements /> },
+                    { path: 'cabinet', element: <ProfileCabinet /> },
                     { path: 'calendar', element: <ProfileCalendar /> },
                     { path: 'privacy', element: <ProfilePrivacy /> },
                     { path: 'settings', element: <ProfileSettings /> },

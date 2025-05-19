@@ -1,7 +1,9 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
 import { Link } from 'react-router-dom';
-import './profile.css';
+import './styles.css';
+import person from '../../assets/img/person.svg';
+import calendar from "../../assets/calendar.svg";
 
 const ProfileMain = () => {
   const { user } = useUser();
@@ -15,33 +17,49 @@ const ProfileMain = () => {
   }
   return (
     <div className="profile-main-content">
-      <div className="profile-main-top">
-        <div className="profile-greeting">
-          <div className="greeting-text">
-            <h2>Привет!</h2>
-            <p>Это твой личный кабинет заботы о себе.<br />
-              Здесь собраны лучшие практики для спокойствия ума, внутренней гармонии и укрепления тела.<br />
-              Начнём вместе путь к твоему лучшему самочувствию!</p>
-          </div>
-          <div className="greeting-illustration">
-            <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="greeting" />
+      <div className="left-column">
+        <div className="user-info-card">
+          <div className="user-info-top">
+            <img className="avatar" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar" />
+            <div className="user-meta">
+              <div className="nickname">@123456</div>
+              <hr style={{border: '1px solid #0000001A'}}></hr>
+              <div className="user-details">25лет<br />123456@mail.com</div>
+            </div>
+            <div className="user-level-block">
+              <div className="level-label">Уровень 1 <span className="info-icon">ⓘ</span></div>
+              <div style={{display:'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <div className="level-bar">
+                  <div className="level-fill" style={{ width: '20%' }}>
+                    <span className="level-progress-text">10/1000</span>
+                  </div>
+                </div>
+
+                <div className="level-end">★</div>
+              </div>
+
+            </div>
           </div>
         </div>
-        <div className="profile-calendar-card">
-          <div className="calendar-header">Февраль 2025</div>
-          <div className="calendar-grid">
-            {/* Simple static calendar for illustration */}
-            <div className="calendar-row calendar-days">
-              <span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span>
+        <h3 className='new-appl'>Новые уведомления</h3>
+        <div className="notifications-block">
+
+          <div className="notification-item">
+                            <span className="notification-star"><svg width="52" height="49" viewBox="0 0 52 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M26 0L32.0619 18.6565H51.6785L35.8083 30.1869L41.8702 48.8435L26 37.3131L10.1298 48.8435L16.1917 30.1869L0.321474 18.6565H19.9381L26 0Z" fill="#FFFF00"/>
+                                    </svg>
+                                    </span>
+            <div className="notification-text">
+              <span className="green-text">+10 звезд</span><br />
+              Успешная регистрация на платформе
             </div>
-            {[...Array(5)].map((_, i) => (
-              <div className="calendar-row" key={i}>
-                {[...Array(7)].map((_, j) => (
-                  <span key={j} className={i === 1 && j === 1 ? 'calendar-active' : ''}>{i * 7 + j + 1 <= 29 ? i * 7 + j + 1 : ''}</span>
-                ))}
-              </div>
-            ))}
           </div>
+        </div>
+      </div>
+
+      <div className="calendar-card">
+        <div className="calendar-grid">
+          <img src={calendar} alt={'calendar'}></img>
         </div>
       </div>
       <div className="profile-progress-row">
@@ -66,36 +84,7 @@ const ProfileMain = () => {
           <div className="progress-value">0%</div>
         </div>
       </div>
-      <div className="profile-bottom-row">
-        <div className="profile-tip-card">
-          <div className="tip-title">Совет дня</div>
-          <div className="tip-content">
-            Когда тревога накатывает, попробуйте задать себе три вопроса:<br />
-            1. Что самое худшее может случиться?<br />
-            2. Насколько это вероятно?<br />
-            3. Что я могу сделать прямо сейчас, чтобы помочь себе?<br /><br />
-            <b>Часто тревожные мысли преувеличивают опасность.</b> Разбор ситуации логически помогает вернуть контроль и снизить уровень стресса.
-          </div>
-        </div>
-        <div className="profile-user-card">
-          <div className="user-avatar">
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar" />
-          </div>
-          <div className="user-level-row">
-            <span>Уровень 1</span>
-            <div className="user-level-bar"><div className="user-level-bar-fill" style={{width: '81%'}}></div></div>
-            <span className="user-level-xp">810/1000</span>
-            <span className="user-level-star">★</span>
-          </div>
-          <div className="user-info-row">25лет<br />123456@mail.com</div>
-          <div className="user-nick">@123456</div>
-        </div>
-        <div className="profile-history-card">
-          <div className="history-title">Моя история</div>
-          <div className="history-desc">Ознакомься с историей своего пути</div>
-          <span className="history-icon">📈</span>
-        </div>
-      </div>
+
     </div>
   );
 };

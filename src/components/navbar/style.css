@@ -40,7 +40,6 @@ header {
     flex: 1;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
 }
 
 .nav-menu li {
@@ -99,11 +98,10 @@ header {
 }
 
 .logout-btn {
-    background-color: #fff;
-    color: #e74c3c;
-    border: 1px solid #e74c3c;
+    background: #339CCC;
+    color:#FFFFFF;
     padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;

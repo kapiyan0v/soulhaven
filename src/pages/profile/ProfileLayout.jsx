@@ -4,12 +4,22 @@ import { useUser } from '../../context/UserContext';
 import './profile.css';
 import logo from '../../assets/img/soulhaven.png'
 
+import iconCabinet from '../../assets/icons/cabinet.svg';
+import iconProfile from '../../assets/icons/profile.svg';
+
+import iconAchievements from '../../assets/icons/achievements.svg';
+import iconCalendar from '../../assets/icons/calendar.svg';
+import iconPrivacy from '../../assets/icons/privacy.svg';
+import iconSettings from '../../assets/icons/settings.svg';
+
+
 const sidebarLinks = [
-  { to: '/profile', label: 'Профиль', icon: '👤' },
-  { to: '/profile/achievements', label: 'Достижения', icon: '🏆' },
-  { to: '/profile/calendar', label: 'Календарь', icon: '📅' },
-  { to: '/profile/privacy', label: 'Конфиденциальность', icon: '📄' },
-  { to: '/profile/settings', label: 'Настройки', icon: '⚙️' },
+  { to: '/profile/cabinet', label: 'Личный кабинет', icon: iconCabinet },
+  { to: '/profile', label: 'Профиль',icon: iconProfile },
+  { to: '/profile/achievements', label: 'Достижения', icon: iconAchievements  },
+  { to: '/profile/calendar', label: 'Календарь', icon: iconCalendar },
+  { to: '/profile/privacy', label: 'Конфиденциальность', icon: iconPrivacy },
+  { to: '/profile/settings', label: 'Настройки', icon: iconSettings},
 ];
 
 const ProfileLayout = () => {
@@ -32,7 +42,12 @@ const ProfileLayout = () => {
           <ul>
             {filteredLinks.map(link => (
               <li key={link.to} className={location.pathname === link.to ? 'active' : ''}>
-                <Link to={link.to}><span className="profile-nav-icon">{link.icon}</span>{link.label}</Link>
+                <Link to={link.to}>
+              <span className="profile-nav-icon">
+                {link.icon && <img src={link.icon} alt={link.label} />}
+              </span>
+                              {link.label}
+                </Link>
               </li>
             ))}
           </ul>

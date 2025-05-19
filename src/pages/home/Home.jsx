@@ -26,6 +26,10 @@ export const Home = () => {
     const [logoVisible, setLogoVisible] = useState(true);
     const [showLevelModal, setShowLevelModal] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [fullName, setFullName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+
 
     const lessons = [
         {
@@ -71,6 +75,19 @@ export const Home = () => {
     }, [loading]);
 
     if (loading) return <Loader logoVisible={logoVisible} />;
+
+
+    const handleSubmit = () => {
+        if (fullName.trim() === '' || phone.trim() === '') {
+            alert('Пожалуйста, заполните все поля.');
+            return;
+        }
+
+        setSubmitted(true);
+        setFullName('');
+        setPhone('');
+    };
+
 
     return (
         <>
@@ -416,10 +433,27 @@ export const Home = () => {
                 <div className="consultation-inner">
                     <h3>Записаться на консультацию</h3>
                     <p>Оставьте свои контакты для связи, с Вами свяжутся в скором времени.</p>
+
                     <div className="consultation-forms">
-                        <input type="text" placeholder='Укажите ФИО'/>
-                        <input type="text" placeholder='Укажите номер телефона'/>
+                        <input
+                            type="text"
+                            placeholder="Укажите ФИО"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Укажите номер телефона"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                        />
                     </div>
+
+                    <button className="consult-button" onClick={handleSubmit}>
+                        Записаться на консультацию
+                    </button>
+
+                    {submitted && <p className="success-message">Форма отправлена!</p>}
                 </div>
             </section>
 
